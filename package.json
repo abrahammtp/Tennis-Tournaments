@@ -1,0 +1,39 @@
+{
+  "name": "tennis-tournaments",
+  "version": "1.0.0",
+  "description": "We are going to create an app that displays the tennis tournaments we would like to attend. We are able to add more tournaments to the list, and mark them once we have visited them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abrahammtp/Tennis-Tournaments.git"
+  },
+  "keywords": [
+    "npm",
+    "mySQL",
+    "express",
+    "handlebars",
+    "data",
+    "tennis",
+    "tournaments",
+    "selection",
+    "list",
+    "queries",
+    "routing",
+    "node",
+    "JavaScript"
+  ],
+  "author": "Abraham Torres Pinto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abrahammtp/Tennis-Tournaments/issues"
+  },
+  "homepage": "https://github.com/abrahammtp/Tennis-Tournaments#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.16.0"
+  }
+}
