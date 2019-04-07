@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
         host: 'localhost',
         user: 'root',
         password: 'root',
-        database: 'q81niqp2g838bhmi'
+        database: 'lm3a6nalp1bqhjpa'
     });
 };
 
