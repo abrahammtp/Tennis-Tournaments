@@ -1,22 +1,23 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+console.log("Banana")
 $(function () {
     $(".change-status").on("click", function (event) {
         var id = $(this).data("id");
-        var newStatus = $(this).data("newstatus");
+        var attended = $(this).data("attended");
 
         var newAttendanceState = {
-            visited: newStatus
+            attended: !attended
         };
 
         // Send the PUT request.
-        $.ajax("/api/tournaments/" + id, {
+        $.ajax("/api/tourney/" + id, {
             type: "PUT",
             data: newAttendanceState
         }).then(
-            function () {
-                console.log("changed attendance to", newStatus);
+            function(data) {
+                console.log(data);
                 // Reload the page to get the updated list
-                location.reload();
+                // location.reload();
             }
         );
     });

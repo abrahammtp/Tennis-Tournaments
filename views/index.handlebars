@@ -1,24 +1,24 @@
-<h1>Cats!</h1>
-
-<h2>Cats that are not sleepy!</h2>
-
 <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+  {{#each tourneys}}
+    {{#if attended}}
+      {{!-- {{> cats/cat-block sleep=false}} --}}
+      <li class="change-status" data-id="{{id}}" data-attended="{{attended}}">
+        {{ name }}
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+<ul>
+  {{#each tourneys}}
+    {{#unless attended}}
+      {{!-- {{> cats/cat-block sleep=false}} --}}
+      <li class="change-status" data-id="{{id}}" data-attended="{{attended}}">
+        {{ name }}
+      </li>
     {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Cats that are sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
 
 <h2>Add a Cat</h2>
 <form class="create-form">

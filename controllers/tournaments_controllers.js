@@ -8,7 +8,7 @@ var tourney = require("../models/tournaments.js");
 router.get("/", function (req, res) {
     tourney.all(function (data) {
         var hbsObject = {
-            to: data,
+            tourneys: data,
         };
         console.log(hbsObject);
         res.render("index", hbsObject);
@@ -29,16 +29,16 @@ router.post("/api/tourneys", function (req, res) {
 router.put("/api/tourney/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
-    console.log("condition", condition);
+    return res.json({"change": req.body, "For_ID": req.params.id});
 
     tourney.update({
         attended: req.body.attended
     }, condition, function (result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
-            return res.status(404).end();
+            return res.status(404).json(result);
         } else {
-            res.status(200).end();
+            res.status(200).json(result);
         }
     });
 });
