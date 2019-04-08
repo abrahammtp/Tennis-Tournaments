@@ -2,7 +2,7 @@ var express = require("express");
 
 var router = express.Router();
 
-var tourney = require("../config/orm.js");
+var tourney = require("../models/tournaments.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
