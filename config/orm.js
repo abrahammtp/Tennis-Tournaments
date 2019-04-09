@@ -27,6 +27,8 @@ function objToSql(ob) {
             arr.push(key + "=" + value);
         }
     }
+
+    return arr.toString();
 }
 
     var orm = {

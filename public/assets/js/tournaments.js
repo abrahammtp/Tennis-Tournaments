@@ -14,8 +14,8 @@ $(function () {
             type: "PUT",
             data: newAttendanceState
         }).then(
-            function(data) {
-                console.log(data);
+            function() {
+                console.log("Changed attendance to" + newAttendanceState);
                 // Reload the page to get the updated list
                 location.reload();
             }
