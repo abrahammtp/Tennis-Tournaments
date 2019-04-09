@@ -11,8 +11,13 @@ var tourney = {
       orm.create("tourneys", cols, vals, function(res) {
         cb(res);
       });    
+    },
+    update: function(objColVals, condition, cb) {
+      orm.update("tourneys", objColVals, condition, function(res) {
+        cb(res);
+      });
     }
   };
   
-  // Export the database functions for the controller (catsController.js).
+  // Export the database functions for the controller (tournaments_controllers.js).
   module.exports = tourney;

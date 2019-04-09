@@ -26,13 +26,13 @@ router.post("/api/tourneys", function (req, res) {
         });
 });
 
-router.put("/api/tourney/:id", function (req, res) {
+router.put("/api/tourneys/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
-    return res.json({"change": req.body, "For_ID": req.params.id});
+    // return res.json({"change": req.body, "For_ID": req.params.id});
 
     tourney.update({
-        attended: req.body.attended
+        attended: req.body.newAttendanceState
     }, condition, function (result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404

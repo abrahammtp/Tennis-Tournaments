@@ -4,20 +4,20 @@ $(function () {
     $(".change-status").on("click", function (event) {
         var id = $(this).data("id");
         var attended = $(this).data("attended");
-
+        console.log("Changed status", attended)
         var newAttendanceState = {
-            attended: !attended
+            attended: true
         };
-
+        console.log(newAttendanceState);
         // Send the PUT request.
-        $.ajax("/api/tourney/" + id, {
+        $.ajax("/api/tourneys/" + id, {
             type: "PUT",
             data: newAttendanceState
         }).then(
             function(data) {
                 console.log(data);
                 // Reload the page to get the updated list
-                // location.reload();
+                location.reload();
             }
         );
     });
@@ -28,16 +28,16 @@ $(function () {
 
         var newTourney = {
             name: $("#tournament").val().trim(),
-            // sleepy: $("[name=sleepy]:checked").val().trim()
+            attendance: $(".form-group").val(),
         };
 
         // Send the POST request.
-        $.ajax("/api/tournament", {
+        $.ajax("/api/tourneys", {
             type: "POST",
             data: newTourney
         }).then(
-            function () {
-                console.log("created new tournament");
+            function (data) {
+                console.log("created new tournament" + data);
                 // Reload the page to get the updated list
                 location.reload();
             }
