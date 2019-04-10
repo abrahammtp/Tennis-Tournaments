@@ -20,11 +20,13 @@ Tennis-Tournaments is a project that allows us to keep track of the tournaments 
     
  # Status of the project
  
- The project is not finished yet, the user is able to create a new tournament and the data is going to be persistent (using JawsDB for this) but the user will not be able to change its attendance status. Below you can see a gifs that demonstrates how the project works so far.
+ The project is not finished yet, the user is able to create a new tournament and to change the status of the tournament but the user interface needs to be polished. As you can see in the gif, once the user clicks on a desired tournament the button is going to change to a list item, that happens because the boolean changes from false to true (attendance).
  
- In this gif we are going to add a new tournament to the list.
+ In this gif we are going to add a new tournament to the list, and also to change its attendance status:
  
- ![tournament](https://user-images.githubusercontent.com/46465000/55845672-dc970580-5b10-11e9-8d77-43c29c2428ec.gif)
+ 
+![work](https://user-images.githubusercontent.com/46465000/55850928-88961c00-5b24-11e9-8d4b-acdfd864224f.gif)
+
 
 
 This is a link to my personal portfolio, I will be honored if you would take a look at it!
