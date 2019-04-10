@@ -28,7 +28,7 @@ $(function () {
 
         var newTourney = {
             name: $("#tournament").val().trim(),
-            attendance: $(".form-group").val(),
+            attendance: $("[name=attended]:checked").val().trim()
         };
 
         // Send the POST request.

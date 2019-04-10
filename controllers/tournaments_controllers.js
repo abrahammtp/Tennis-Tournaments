@@ -19,7 +19,7 @@ router.post("/api/tourneys", function (req, res) {
     tourney.create([
         "name", "attended"
     ], [
-            req.body.name, req.body.attended
+            req.body.name, req.body.attendance
         ], function (result) {
             // Send back the ID of the new quote
             res.json({ id: result.insertId });
@@ -32,8 +32,8 @@ router.put("/api/tourneys/:id", function (req, res) {
     // return res.json({"change": req.body, "For_ID": req.params.id});
 
     tourney.update({
-        attended: req.body.newAttendanceState
-    }, condition, function (result) {
+        attendance: req.body.newAttendanceState
+    }, condition, function(result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();
