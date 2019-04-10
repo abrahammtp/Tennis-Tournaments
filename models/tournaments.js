@@ -1,12 +1,14 @@
+// Here we are requiring the orm module from orm.js
 var orm = require("../config/orm.js");
 
+// These are going to be the orm's for displaying, creating and updating the tournaments
 var tourney = {
     all: function(cb) {
       orm.all("tourneys", function(res) {
         cb(res);
       });
     },
-    // The variables cols and vals are arrays.
+    
     create: function(cols, vals, cb) {
       orm.create("tourneys", cols, vals, function(res) {
         cb(res);
@@ -19,5 +21,5 @@ var tourney = {
     }
   };
   
-  // Export the database functions for the controller (tournaments_controllers.js).
+  // Here we export the database functions for the controller tournaments_controllers.js
   module.exports = tourney;

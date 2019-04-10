@@ -24,7 +24,6 @@
     <ul>
         {{#each tourneys}}
         {{#if attended}}
-        {{!-- {{> cats/cat-block sleep=false}} --}}
         <li class="change-status" data-id="{{id}}" data-attended="{{attended}}">
             {{ name }}
         </li>
@@ -34,7 +33,6 @@
     <ul>
         {{#each tourneys}}
         {{#unless attended}}
-        {{!-- {{> cats/cat-block sleep=false}} --}}
         <li class="change-status" data-id="{{id}}" data-attended="{{attended}}">
             {{ name }}
         </li>
