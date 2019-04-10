@@ -18,9 +18,9 @@ router.get("/", function (req, res) {
 
 router.post("/api/tourneys", function (req, res) {
     tourney.create([
-        "name", "attended"
+        "name"
     ], [
-            req.body.name, req.body.attendance
+            req.body.name
         ], function (result) {
             res.json({ id: result.insertId });
         });
@@ -30,7 +30,7 @@ router.put("/api/tourneys/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
     tourney.update({
-        attendance: req.body.newAttendanceState
+        attended: true
     }, condition, function(result) {
         if (result.changedRows == 0) {
             // If no rows were changed, that means the ID does not exist so we throw a 404 error

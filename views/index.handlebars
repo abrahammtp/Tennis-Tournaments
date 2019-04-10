@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Add a tournament you wish to attend!</h2>
     <br>
-    <form class="create-form">
+    <form class="create-form" method="POST" action="/api/tourneys">
 
         <div class="form-group">
             <label for="ca">Tournament Name:</label>
@@ -16,7 +16,7 @@
         </div>
         <br>
 
-        <button type="submit">Add Tournament</button>
+        <button type="submit" class="add-tournament">Add Tournament</button>
     </form>
 
     <br>
@@ -33,9 +33,9 @@
     <ul>
         {{#each tourneys}}
         {{#unless attended}}
-        <li class="change-status" data-id="{{id}}" data-attended="{{attended}}">
+        <button class="change-status" data-id="{{id}}" data-attended="{{attended}}">
             {{ name }}
-        </li>
+        </button>
         {{/unless}}
         {{/each}}
     </ul>
